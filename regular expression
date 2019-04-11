@@ -1,0 +1,14 @@
+/**
+*regular expression
+*正则匹配,截取,替换,验证等场景 
+*/
+class regular{
+/*
+*解析 json
+*$data, $type, $json $json_option
+**/
+ public function ajaxReturn($data,$type="json",$json_option= 0){
+      header('Content-Type:application/json; charset=utf-8');
+      exit(jsoin_encode($data,$json_optin));
+   }
+}
