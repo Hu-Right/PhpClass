@@ -1,0 +1,30 @@
+<?php
+namespace aap\utils;
+class Mstring{
+/*
+*#生成随机数订单号类
+*@param number $length 长度
+*@param string $type 类型
+*@param number $convert 转换大小写
+*@return string $code
+*/
+public static function random($length=6,$type='string',$convert=0){
+    #配置生成随机组合的参数{1.number;数字哦，2.letter;大小写字母哦，3.string；大小写字母加数字，4.all；大小写字母，数字，} 
+    $config    = [
+       'number' =>'1234567890',
+       'letter' =>'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+       'string' =>'abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789',
+        'all'   =>'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+    ];
+    #判读如果配置参数中不存在$config $type{类型 则赋值为字符串型}
+    if(!isset($config[$type])$type = 'string')
+        $string = config[$type];
+        $code   = '';//定义一个返回接受参数string类型
+        $strlen = strlen($string)-1;//定义一个字符串的的长度；n-1；
+          for($i= 0;$i<$length;$i++){//循环控制输出长度
+           $code.= $string{mt_rand(0,$strlen)};//用随机函数拼接code变量 并返回code
+          }
+          return $code;
+     }
+}
+?>
